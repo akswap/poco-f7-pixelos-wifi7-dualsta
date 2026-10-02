@@ -36,7 +36,7 @@ The fixed-frequency hotspot was observed at 20 MHz on this PixelOS test. Other R
 - POCO F7 (`onyx`).
 - Matching PixelOS build and APEX layout.
 - Magisk/root access.
-- A kernel/init_boot with the required Qualcomm dual-STA capability enabled. A device-specific init_boot image is intentionally not published here.
+- The exact PixelOS onyx build dated `20260920_1714`; the published patched and stock `init_boot` images are build-specific.
 - A complete boot/init_boot backup before installation.
 
 Do not install these packages on another device or an unrelated PixelOS build.
@@ -50,7 +50,8 @@ Do not install these packages on another device or an unrelated PixelOS build.
 | `POCO-F7-PixelOS-Exact-Dual-STA-Framework-v1.0.zip` | Mounts the rebuilt PixelOS-native `service-wifi.jar` containing the working Infinity-X exact-request flow. | Yes |
 | `POCO-F7-PixelOS-Exact-Dual-STA-v1.5-public.zip` | Provides the Wi-Fi overlay, exact-profile helper and update-safe profile storage for `wlan1`. | Yes |
 | `Dual-STA-Profile-Manager-v1.3-configurable.apk` | Adds, saves and connects the exact secondary SSID/BSSID/frequency profiles. | Recommended for control |
-| Patched device-specific `init_boot` | Enables the required kernel-side Qualcomm STA+STA capability. | Yes, but not published |
+| `init_boot-onyx_20260920_1714-DualSTA-Magisk-PATCHED.img` | Magisk-patched `init_boot` with the tested Dual-STA preload and `qca_cld3_wcn7750-dualsta.ko` payload. | Yes |
+| `init_boot-onyx_20260920_1714.img` | Official matching stock image for rollback. | Keep available before flashing |
 
 Install the Framework ZIP and Exact Dual-STA ZIP together, then install the Manager APK. The public files contain no private SSIDs, BSSIDs or passwords.
 
@@ -65,13 +66,15 @@ These two ZIPs produced a real 6 GHz Wi-Fi 7/EHT hotspot with `wlan1` in `type A
 
 ## Downloads
 
-Files are stored in [`releases/`](releases/):
+Module ZIPs, the APK and checksum file are stored in [`releases/`](releases/). The two `init_boot` images are attached to the tagged GitHub Release so large boot images are not committed to the Git history.
 
 - `POCO-F7-PixelOS-6GHz-US-v1.0.zip`
 - `POCO-F7-PixelOS-Xiaomi-X2-Hostapd-v0.1-test.zip`
 - `POCO-F7-PixelOS-Exact-Dual-STA-Framework-v1.0.zip`
 - `POCO-F7-PixelOS-Exact-Dual-STA-v1.5-public.zip`
 - `Dual-STA-Profile-Manager-v1.3-configurable.apk`
+- `init_boot-onyx_20260920_1714-DualSTA-Magisk-PATCHED.img`
+- `init_boot-onyx_20260920_1714.img`
 - `SHA256SUMS.txt`
 
 The public Dual-STA ZIP contains no SSIDs, BSSIDs or passwords. Add profiles with the manager app after installation.
@@ -80,12 +83,19 @@ Version 1.5 keeps the manager profile database in `/data/adb/aks-dualsta` and ex
 
 ## Installation
 
-1. Disable older generic PixelOS Dual-STA modules, including `onyx_pixelos_dualsta_overlay`.
-2. For 6 GHz hotspot support, install the 6 GHz US and Xiaomi X2 hostapd ZIPs.
-3. For exact STA+STA, install the framework ZIP and the exact Dual-STA ZIP.
-4. Install the profile manager APK.
-5. Reboot.
-6. Add the secondary networks in the manager app, then use **Save & Connect**.
+1. Verify that the phone is POCO F7 (`onyx`) on PixelOS build `20260920_1714`, unlock the bootloader and keep the published stock image available.
+2. Reboot to bootloader and flash `init_boot-onyx_20260920_1714-DualSTA-Magisk-PATCHED.img` to the current `init_boot` slot.
+3. Disable older generic PixelOS Dual-STA modules, including `onyx_pixelos_dualsta_overlay`.
+4. For 6 GHz hotspot support, install the 6 GHz US and Xiaomi X2 hostapd ZIPs.
+5. For exact STA+STA, install the framework ZIP and the exact Dual-STA ZIP.
+6. Install the profile manager APK and reboot.
+7. Add the secondary networks in the manager app, then use **Save & Connect**.
+
+```text
+fastboot getvar current-slot
+fastboot flash init_boot init_boot-onyx_20260920_1714-DualSTA-Magisk-PATCHED.img
+fastboot reboot
+```
 
 The framework package bind-mounts the rebuilt PixelOS jar. It does not overwrite the APEX file on disk.
 
@@ -102,7 +112,14 @@ For Dual-STA, `wlan0` and `wlan1` must both show `type managed`, with `wlan1` on
 
 ## Rollback
 
-Disable or remove the installed modules and reboot. Re-enable the previous module only if returning to the earlier generic band-selection implementation. Restore the saved init_boot image if the kernel-side Dual-STA patch also needs to be removed.
+Disable or remove the installed modules, then flash the published matching stock image to the current slot:
+
+```text
+fastboot flash init_boot init_boot-onyx_20260920_1714.img
+fastboot reboot
+```
+
+To restore both slots intentionally, use `fastboot --slot=all flash init_boot init_boot-onyx_20260920_1714.img`. Do not use `init_boot_ab` as a partition name; it is not standard fastboot A/B syntax.
 
 ## Notes
 
