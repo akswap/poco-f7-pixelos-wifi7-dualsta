@@ -31,7 +31,8 @@ Verified combinations:
 | 5 GHz | 2.4 GHz | Stable |
 | 5 GHz | 5 GHz, 160 MHz | Stable |
 | 5 GHz | 6 GHz, 160 MHz | Stable |
-| 5+6 GHz MLO | 2.4 GHz | Stable fallback |
+| 5+6 GHz MLO | 2.4 GHz | Stable |
+| 5+6 GHz MLO | 5 GHz | Stable |
 
 Framework logs confirmed the pre-scan secondary interface, exact scan match, pre-created CMM reuse and primary-fallback rejection paths. See [runtime verification](docs/runtime-verification.md).
 
