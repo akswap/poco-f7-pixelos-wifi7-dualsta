@@ -27,7 +27,9 @@ Verified combinations:
 
 | `wlan0` primary | `wlan1` secondary | Result |
 |---|---|---|
+| 2.4 GHz | 2.4 GHz | Stable |
 | 2.4 GHz | 5 GHz, 160 MHz | Stable |
+| 2.4 GHz | 6 GHz | Failed: 6 GHz becomes primary |
 | 5 GHz | 2.4 GHz | Stable |
 | 5 GHz | 5 GHz, 160 MHz | Stable |
 | 5 GHz | 6 GHz, 160 MHz | Stable |
@@ -38,7 +40,7 @@ Verified combinations:
 
 Framework logs confirmed the pre-scan secondary interface, exact scan match, pre-created CMM reuse and primary-fallback rejection paths. See [runtime verification](docs/runtime-verification.md).
 
-The verified matrix now includes `6 GHz primary + 5 GHz secondary` and `6 GHz primary + 2.4 GHz secondary`. A standalone 6 GHz primary with another 6 GHz secondary has not been tested.
+The verified matrix includes `6 GHz primary + 5 GHz secondary`, `6 GHz primary + 2.4 GHz secondary`, and `2.4 GHz primary + 2.4 GHz secondary`. The requested `2.4 GHz primary + 6 GHz secondary` case fails because the framework promotes 6 GHz to primary. A standalone 6 GHz primary with another 6 GHz secondary has not been tested.
 
 ### 6 GHz hotspot
 
