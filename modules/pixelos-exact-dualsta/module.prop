@@ -1,0 +1,6 @@
+id=onyx_dualsta_overlay
+name=POCO F7 PixelOS Exact Dual STA
+version=1.4.0-pixelos-exact
+versionCode=14
+author=AKS
+description=App-controlled exact SSID/BSSID secondary STA using the PixelOS-native Infinity-X framework port

@@ -1,0 +1,6 @@
+id=onyx_pixelos_xiaomi_hostapd_test
+name=POCO F7 PixelOS Xiaomi WiFi 7 Hostapd Test
+version=v0.1-test
+versionCode=1
+author=AKS
+description=PixelOS onyx reversible test of Infinity-X Xiaomi X2 hostapd stack for Wi-Fi 7 EHT SoftAP

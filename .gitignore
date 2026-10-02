@@ -1,0 +1,7 @@
+*.tar
+*.tgz
+*.img
+*.ko
+*.idsig
+private/
+profiles-private.conf

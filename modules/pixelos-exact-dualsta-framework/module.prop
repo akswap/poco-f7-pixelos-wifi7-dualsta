@@ -1,0 +1,6 @@
+id=aks_pixelos_exact_dualsta_wifi
+name=PixelOS Exact Dual-STA Wi-Fi Framework
+version=1.0
+versionCode=10
+author=AKS
+description=Reversible bind of the PixelOS-native service-wifi.jar with Infinity-X exact SSID/BSSID secondary-STA flow

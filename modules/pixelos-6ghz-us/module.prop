@@ -1,0 +1,6 @@
+id=onyx_pixelos_6ghz_us
+name=POCO F7 PixelOS 6GHz US
+version=1.0
+versionCode=1
+author=AKS
+description=Enable WCN7750 6GHz and force Wi-Fi country code US on PixelOS Android 17
