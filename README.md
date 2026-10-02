@@ -8,7 +8,7 @@
 ![Dual-STA](https://img.shields.io/badge/STA%2BSTA-Tested-43A047)
 ![6 GHz](https://img.shields.io/badge/6%20GHz-Tested-43A047)
 ![Wi-Fi 7](https://img.shields.io/badge/Wi--Fi%207-802.11be-00A0D2)
-![320 MHz](https://img.shields.io/badge/320%20MHz-Not%20confirmed-E53935)
+![320 MHz](https://img.shields.io/badge/320%20MHz-Negotiated-43A047)
 
 Device-specific Magisk modules and test evidence for the POCO F7 (`onyx`) on PixelOS build `CP2A.260605.016`.
 
@@ -37,9 +37,9 @@ Framework logs confirmed the pre-scan secondary interface, exact scan match, pre
 
 ### 6 GHz hotspot
 
-`hostapd` runs and `iw dev` shows a real `wlan1` interface of type `AP` on 6775 MHz. The generated hostapd configuration and driver path support Wi-Fi 7/EHT.
+`hostapd` runs and the phone creates a real AP interface (`wlan1` or `wlan2`, depending on the active concurrency mode). The generated hostapd configuration and driver path enable Wi-Fi 7/EHT.
 
-The fixed-frequency hotspot was observed at 20 MHz on this PixelOS test. Other ROM tests reached up to 160 MHz fallback. A 320 MHz SoftAP link is **not confirmed**, so this repository does not claim it as working.
+The current PixelOS test confirmed a 6 GHz Wi-Fi 7 link on channel 133 (6615 MHz). The Qualcomm driver started the AP with `bw 13` and entered `vdev_start_cmd_fill_11be` with EHT operations. A Windows client with an Intel BE200 then connected to `MobSoftAP_Router` as `802.11be` and reported an aggregated receive/transmit link speed of **3843/3980 Mbps**, confirming the negotiated 320 MHz link. Earlier 20 MHz and 160 MHz results were fallback test runs, not the final working result.
 
 ## Requirements
 
@@ -72,7 +72,7 @@ Install the Framework ZIP and Exact Dual-STA ZIP together, then install the Mana
 | `POCO-F7-PixelOS-6GHz-US-v1.0.zip` | Supplies the tested 6 GHz regulatory configuration. | Yes |
 | `POCO-F7-PixelOS-Xiaomi-X2-Hostapd-v0.1-test.zip` | Preserves the Xiaomi/Infinity-X X2 hostapd binaries, libraries, SELinux rules and RUNPATH layout. | Yes |
 
-These two ZIPs produced a real 6 GHz Wi-Fi 7/EHT hotspot with `wlan1` in `type AP` mode on 6775 MHz. **There is currently no separate confirmed 320 MHz working file.** The fixed-frequency PixelOS test linked at 20 MHz, while tests on other ROMs fell back to at most 160 MHz. Do not describe the hotspot as 320 MHz working until the client link or driver runtime proves a 320 MHz channel width.
+These two ZIPs produced the confirmed 6 GHz Wi-Fi 7/EHT hotspot. In the successful 320 MHz run, the AP interface was `wlan2` on channel 133 (6615 MHz); the interface number can change with Wi-Fi concurrency state. Both hotspot ZIPs are required—the 320 MHz result is the combined configuration, not a separate third package.
 
 ## Downloads
 
