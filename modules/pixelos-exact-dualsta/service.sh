@@ -3,6 +3,8 @@
 MODDIR=$(dirname "$0")
 JAR="$MODDIR/dualsta-helper-config.jar"
 CONFIG="$MODDIR/profiles.conf"
+DATA_DIR=/data/adb/aks-dualsta
+DATA_CONFIG="$DATA_DIR/profiles.conf"
 LOG=/data/local/tmp/dualsta-autoconnect.log
 HELPER_LOG=/data/local/tmp/dualsta-helper.log
 PIDFILE=/data/local/tmp/dualsta-helper.pid
@@ -62,6 +64,19 @@ wait_hotspot_end() {
     done
     log_msg "hotspot ended; secondary STA resume scheduled"
 }
+
+mkdir -p "$DATA_DIR"
+chmod 700 "$DATA_DIR" 2>/dev/null
+if [ -f "$CONFIG" ] && [ ! -L "$CONFIG" ]; then
+    if [ ! -f "$DATA_CONFIG" ] \
+        || ! grep -Fq 'No private Wi-Fi credentials are shipped.' "$CONFIG"; then
+        cp -p "$CONFIG" "$DATA_CONFIG" 2>/dev/null
+    fi
+fi
+if [ -f "$DATA_CONFIG" ]; then
+    rm -f "$CONFIG"
+    ln -s "$DATA_CONFIG" "$CONFIG"
+fi
 
 until [ "$(getprop sys.boot_completed)" = "1" ]; do
     sleep 2

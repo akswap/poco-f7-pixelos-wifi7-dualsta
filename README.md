@@ -48,11 +48,13 @@ Files are stored in [`releases/`](releases/):
 - `POCO-F7-PixelOS-6GHz-US-v1.0.zip`
 - `POCO-F7-PixelOS-Xiaomi-X2-Hostapd-v0.1-test.zip`
 - `POCO-F7-PixelOS-Exact-Dual-STA-Framework-v1.0.zip`
-- `POCO-F7-PixelOS-Exact-Dual-STA-v1.4-public.zip`
+- `POCO-F7-PixelOS-Exact-Dual-STA-v1.5-public.zip`
 - `Dual-STA-Profile-Manager-v1.3-configurable.apk`
 - `SHA256SUMS.txt`
 
 The public Dual-STA ZIP contains no SSIDs, BSSIDs or passwords. Add profiles with the manager app after installation.
+
+Version 1.5 keeps the manager profile database in `/data/adb/aks-dualsta` and exposes it at the manager-compatible module path. Saved profiles therefore survive later module ZIP updates.
 
 ## Installation
 

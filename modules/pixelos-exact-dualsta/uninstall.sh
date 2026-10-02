@@ -7,4 +7,5 @@ if [ -n "$pid" ] && [ -r "/proc/$pid/cmdline" ] \
     kill "$pid" 2>/dev/null
 fi
 rm -f "$PIDFILE"
+rm -rf /data/adb/aks-dualsta
 cmd wifi force-overlay-config-value bool config_wifiAllowMultiInternetConnectDual5GFrequency disabled false >/dev/null 2>&1
