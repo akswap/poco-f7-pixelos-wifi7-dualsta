@@ -41,6 +41,28 @@ The fixed-frequency hotspot was observed at 20 MHz on this PixelOS test. Other R
 
 Do not install these packages on another device or an unrelated PixelOS build.
 
+## Which files are for each feature?
+
+### STA+STA / Exact Dual-STA
+
+| File | Purpose | Required |
+|---|---|---|
+| `POCO-F7-PixelOS-Exact-Dual-STA-Framework-v1.0.zip` | Mounts the rebuilt PixelOS-native `service-wifi.jar` containing the working Infinity-X exact-request flow. | Yes |
+| `POCO-F7-PixelOS-Exact-Dual-STA-v1.5-public.zip` | Provides the Wi-Fi overlay, exact-profile helper and update-safe profile storage for `wlan1`. | Yes |
+| `Dual-STA-Profile-Manager-v1.3-configurable.apk` | Adds, saves and connects the exact secondary SSID/BSSID/frequency profiles. | Recommended for control |
+| Patched device-specific `init_boot` | Enables the required kernel-side Qualcomm STA+STA capability. | Yes, but not published |
+
+Install the Framework ZIP and Exact Dual-STA ZIP together, then install the Manager APK. The public files contain no private SSIDs, BSSIDs or passwords.
+
+### 6 GHz Wi-Fi 7 hotspot
+
+| File | Purpose | Required |
+|---|---|---|
+| `POCO-F7-PixelOS-6GHz-US-v1.0.zip` | Supplies the tested 6 GHz regulatory configuration. | Yes |
+| `POCO-F7-PixelOS-Xiaomi-X2-Hostapd-v0.1-test.zip` | Preserves the Xiaomi/Infinity-X X2 hostapd binaries, libraries, SELinux rules and RUNPATH layout. | Yes |
+
+These two ZIPs produced a real 6 GHz Wi-Fi 7/EHT hotspot with `wlan1` in `type AP` mode on 6775 MHz. **There is currently no separate confirmed 320 MHz working file.** The fixed-frequency PixelOS test linked at 20 MHz, while tests on other ROMs fell back to at most 160 MHz. Do not describe the hotspot as 320 MHz working until the client link or driver runtime proves a 320 MHz channel width.
+
 ## Downloads
 
 Files are stored in [`releases/`](releases/):
