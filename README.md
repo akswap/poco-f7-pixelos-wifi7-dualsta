@@ -1,4 +1,4 @@
-# POCO F7 (onyx) PixelOS Wi-Fi 7 hotspot and exact Dual-STA
+# POCO F7 (onyx) PixelOS Android 17 Wi-Fi 7 hotspot and exact Dual-STA
 
 ![Android](https://img.shields.io/badge/Android-17-3DDC84?logo=android&logoColor=white)
 ![ROM](https://img.shields.io/badge/ROM-PixelOS-4285F4)
