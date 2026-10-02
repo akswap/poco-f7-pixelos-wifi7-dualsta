@@ -1,5 +1,15 @@
 # POCO F7 (onyx) PixelOS Wi-Fi 7 hotspot and exact Dual-STA
 
+![Android](https://img.shields.io/badge/Android-17-3DDC84?logo=android&logoColor=white)
+![ROM](https://img.shields.io/badge/ROM-PixelOS-4285F4)
+![Build](https://img.shields.io/badge/Build-20260920__1714-555555)
+![Root](https://img.shields.io/badge/Root-Required-E53935)
+![Device](https://img.shields.io/badge/Device-POCO%20F7-76B900)
+![Dual-STA](https://img.shields.io/badge/STA%2BSTA-Tested-43A047)
+![6 GHz](https://img.shields.io/badge/6%20GHz-Tested-43A047)
+![Wi-Fi 7](https://img.shields.io/badge/Wi--Fi%207-802.11be-00A0D2)
+![320 MHz](https://img.shields.io/badge/320%20MHz-Not%20confirmed-E53935)
+
 Device-specific Magisk modules and test evidence for the POCO F7 (`onyx`) on PixelOS build `CP2A.260605.016`.
 
 This repository covers two separate features:
