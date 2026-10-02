@@ -32,12 +32,13 @@ Verified combinations:
 | 5 GHz | 5 GHz, 160 MHz | Stable |
 | 5 GHz | 6 GHz, 160 MHz | Stable |
 | 6 GHz | 5 GHz, 160 MHz | Stable |
+| 6 GHz | 2.4 GHz | Stable |
 | 5+6 GHz MLO | 2.4 GHz | Stable |
 | 5+6 GHz MLO | 5 GHz | Stable |
 
 Framework logs confirmed the pre-scan secondary interface, exact scan match, pre-created CMM reuse and primary-fallback rejection paths. See [runtime verification](docs/runtime-verification.md).
 
-The verified matrix now includes `6 GHz primary + 5 GHz secondary` at 160 MHz. A standalone 6 GHz primary with another 6 GHz secondary has not been tested.
+The verified matrix now includes `6 GHz primary + 5 GHz secondary` and `6 GHz primary + 2.4 GHz secondary`. A standalone 6 GHz primary with another 6 GHz secondary has not been tested.
 
 ### 6 GHz hotspot
 
