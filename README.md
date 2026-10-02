@@ -9,7 +9,8 @@
 ![6 GHz](https://img.shields.io/badge/6%20GHz-Tested-43A047)
 ![Wi-Fi 7](https://img.shields.io/badge/Wi--Fi%207-802.11be-00A0D2)
 ![320 MHz](https://img.shields.io/badge/320%20MHz-Negotiated-43A047)
-<img width="160" height="121" alt="dualsta" src="https://github.com/user-attachments/assets/dcf537e2-802a-423d-adef-bcc85240d9b2" />
+<br>
+<img width="160" height="121" alt="dualsta" src="https://github.com/user-attachments/assets/dcf537e2-802a-423d-adef-bcc85240d9b2" /></br>
 
 Device-specific Magisk modules and test evidence for the POCO F7 (`onyx`) on PixelOS build `CP2A.260605.016`.
 
