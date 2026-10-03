@@ -32,11 +32,12 @@ Verified combinations:
 | 2.4 GHz | 2.4 GHz | Stable |
 | 2.4 GHz | 5 GHz, 160 MHz | Stable |
 | 2.4 GHz | 6 GHz | Stable |
-| 5 GHz | 2.4 GHz | Stable |
-| 5 GHz | 5 GHz, 160 MHz | Stable |
-| 5 GHz | 6 GHz, 160 MHz | Stable |
-| 6 GHz | 5 GHz, 160 MHz | Stable |
-| 6 GHz | 2.4 GHz | Stable |
+| 5 GHz 160Mhz | 2.4 GHz | Stable |
+| 5 GHz 160Mhz | 5 GHz, 160 MHz | Stable |
+| 5 GHz 160Mhz | 6 GHz, 160 MHz | Stable |
+| 6 GHz 320Mhz | 5 GHz, 160 MHz | Stable |
+| 6 GHz 320Mhz  | 6 GHz, 160 MHz | Stable 6Ghz 2 Router Required |
+| 6 GHz 320Mhz | 2.4 GHz | Stable |
 | 5+6 GHz MLO | 2.4 GHz | Stable |
 | 5+6 GHz MLO | 5 GHz | Stable |
 
