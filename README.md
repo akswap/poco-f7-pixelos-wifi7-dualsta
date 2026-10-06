@@ -67,9 +67,9 @@ Do not install these packages on another device or an unrelated PixelOS build.
 
 | File | Purpose | Required |
 |---|---|---|
-| `POCO-F7-PixelOS-Exact-Dual-STA-Framework-v1.0.zip` | Mounts the rebuilt PixelOS-native `service-wifi.jar` containing the working Infinity-X exact-request flow. | Yes |
-| `POCO-F7-PixelOS-Exact-Dual-STA-v1.5-public.zip` | Provides the Wi-Fi overlay, exact-profile helper and update-safe profile storage for `wlan1`. | Yes |
-| `Dual-STA-Profile-Manager-v1.3-configurable.apk` | Adds, saves and connects the exact secondary SSID/BSSID/frequency profiles. | Recommended for control |
+| `POCO-F7-PixelOS-Exact-Dual-STA-Framework-v1.3-FORCE-INTERNET.zip` | Mounts the rebuilt PixelOS-native `service-wifi.jar` containing the working Infinity-X exact-request flow. | Yes |
+| `POCO-F7-PixelOS-Exact-Dual-STA-v1.6.5-FORCE-INTERNET.zip` | Provides the Wi-Fi overlay, exact-profile helper and update-safe profile storage for `wlan1`. | Yes |
+| `DualStaProfileManager-v1.4-autoconnect.apk` | Adds, saves and connects the exact secondary SSID/BSSID/frequency profiles. | Recommended for control |
 | `init_boot-onyx_20260920_1714-DualSTA-Magisk-PATCHED.img` | Magisk-patched `init_boot` with the tested Dual-STA preload and `qca_cld3_wcn7750-dualsta.ko` payload. | Yes |
 | `init_boot-onyx_20260920_1714.img` | Official matching stock image for rollback. | Keep available before flashing |
 
@@ -90,9 +90,9 @@ Module ZIPs, the APK and checksum file are stored in [`releases/`](releases/). T
 
 - `POCO-F7-PixelOS-6GHz-US-v1.0.zip`
 - `POCO-F7-PixelOS-Xiaomi-X2-Hostapd-v0.1-test.zip`
-- `POCO-F7-crDroid17-Exact-Dual-STA-Framework-v1.7-port5-INTERNET.zip`
-- `POCO-F7-crDroid17-Exact-Dual-STA-Controller-v2.1-port5-INTERNET.zip`
-- `DualStaProfileManager-crDroid17-v1.5.3-security-guard.apk`
+- `POCO-F7-PixelOS-Exact-Dual-STA-Framework-v1.3-FORCE-INTERNET.zip`
+- `POCO-F7-PixelOS-Exact-Dual-STA-v1.6.5-FORCE-INTERNET.zip`
+- `DualStaProfileManager-v1.4-autoconnect.apk`
 - `init_boot-onyx_20260920_1714-DualSTA-Magisk-PATCHED.img`
 - `init_boot-onyx_20260920_1714.img`
 - `SHA256SUMS.txt`
