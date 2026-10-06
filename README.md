@@ -90,9 +90,9 @@ Module ZIPs, the APK and checksum file are stored in [`releases/`](releases/). T
 
 - `POCO-F7-PixelOS-6GHz-US-v1.0.zip`
 - `POCO-F7-PixelOS-Xiaomi-X2-Hostapd-v0.1-test.zip`
-- `POCO-F7-PixelOS-Exact-Dual-STA-Framework-v1.0.zip`
-- `POCO-F7-PixelOS-Exact-Dual-STA-v1.5-public.zip`
-- `Dual-STA-Profile-Manager-v1.3-configurable.apk`
+- `POCO-F7-crDroid17-Exact-Dual-STA-Framework-v1.7-port5-INTERNET.zip`
+- `POCO-F7-crDroid17-Exact-Dual-STA-Controller-v2.1-port5-INTERNET.zip`
+- `DualStaProfileManager-crDroid17-v1.5.3-security-guard.apk`
 - `init_boot-onyx_20260920_1714-DualSTA-Magisk-PATCHED.img`
 - `init_boot-onyx_20260920_1714.img`
 - `SHA256SUMS.txt`
